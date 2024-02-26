@@ -2,7 +2,7 @@
   "name": "computer-parts-store-frontend",
   "version": "1.0.0",
   "description": "This is the frontend application for a fictional computer parts store.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {},
   "keywords": [],
   "author": "",
