@@ -1,11 +1,15 @@
-import express from 'express';
-import expressEjsLayouts from 'express-ejs-layouts';
+const express = require('express');
 const app = express();
+const expressLayouts = require('express-ejs-layouts');
+
+const indexRouter = require('./routes/index.js');
 
 app.set('view engine', 'ejs');
 app.set('views', '/views');
 app.set('layout', 'layouts/layout');
-app.use(expressEjsLayouts);
+app.use(expressLayouts);
 app.use(express.static('public'));
+
+app.use('/', indexRouter);
 
 app.listen(process.env.PORT || 3000);

@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "This is the frontend application for a fictional computer parts store.",
   "main": "server.js",
-  "type": "module",
   "scripts": {
     "start": "node server.js",
     "devStart": "nodemon server.js"
