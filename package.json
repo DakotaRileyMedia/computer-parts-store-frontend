@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "This is the frontend application for a fictional computer parts store.",
   "main": "server.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node server.js",
+    "devStart": "nodemon server.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
