@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Processer = require('../models/processor');
 
 // All Processors Route
 router.get('/', (req, res) => {
@@ -8,7 +9,7 @@ router.get('/', (req, res) => {
 
 // New Processors Route
 router.get('/new', (req, res) => {
-  res.render('processors/new');
+  res.render('processors/new', { Processor: new Processer() });
 });
 
 // Create Processors Route
