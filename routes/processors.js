@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 
 // New Processors Route
 router.get('/new', (req, res) => {
-  res.render('processors/new', { Processor: new Processer() });
+  res.render('processors/new', { processor: new Processer() });
 });
 
 // Create Processors Route
