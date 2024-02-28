@@ -4,11 +4,20 @@ const Processor = require('../models/processor');
 
 // All Processors Route
 router.get('/', async (req, res) => {
+  // Search for name
+  let searchOptions = {};
+  if (req.query.name != null && req.query.name !== '') {
+    searchOptions.name = new RegExp(req.query.name, 'i');
+  }
+
   try {
     // Get all Processors
-    const processors = await Processor.find({});
+    const processors = await Processor.find(searchOptions);
     // Display Processors
-    res.render('processors/index', { processors: processors });
+    res.render('processors/index', {
+      processors: processors,
+      searchOptions: req.query,
+    });
   } catch {
     res.redirect('/');
   }
