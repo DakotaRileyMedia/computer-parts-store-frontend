@@ -1,1 +1,12 @@
-All Processors
+<h2>Search Processors</h2>
+<form action="/processors" method="GET">
+  <label>Name</label>
+  <input type="text" name="name">
+  <button type="submit">Search</button>
+</form>
+<br>
+<!-- Display all processors -->
+<% processors.forEach(processor => { %>
+  <div><%= processor.name %></div>
+<% }); %>
+

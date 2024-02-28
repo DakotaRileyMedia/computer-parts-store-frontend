@@ -3,8 +3,15 @@ const router = express.Router();
 const Processor = require('../models/processor');
 
 // All Processors Route
-router.get('/', (req, res) => {
-  res.render('processors/index');
+router.get('/', async (req, res) => {
+  try {
+    // Get all Processors
+    const processors = await Processor.find({});
+    // Display Processors
+    res.render('processors/index', { processors: processors });
+  } catch {
+    res.redirect('/');
+  }
 });
 
 // New Processors Route
